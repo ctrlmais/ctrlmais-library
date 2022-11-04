@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "repository": "https://github.com/ctrlmais/ctrlmais-library",
   "license": "MIT",
+  "private": false,
   "description": "Biblioteca de componentes",
   "source": "src/index.ts",
   "main": "dist/main.js",
@@ -11,6 +12,10 @@
   "isLibrary": true,
   "engines": {
     "node": ">=16 <17"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
     "watch": "parcel watch ./src/index.ts",
