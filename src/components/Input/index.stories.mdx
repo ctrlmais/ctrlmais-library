@@ -1,0 +1,100 @@
+<!-- Input.stories.mdx -->
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Input } from './index';
+
+<Meta title="Docs/Input" component={ Input } />
+
+export const Template = (args) => <Input {...args} />;
+
+# Input
+
+> O **_`Input`_** é um componente moderno, que permite a entrada de dados pelo usuário.
+
+## _Props_
+
+> Propriedades comuns do componente.
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `placeholder` | `string` | `johndoe@gmail.com` | Placeholder do input |
+| `type` | `string` | `text` | Tipo do input |
+| `size` | `string` | `md` | Tamanho do input <u>_sm, md e lg_</u> |
+| `value` | `string` | `null` | Valor do input |
+| `onChange` | `function` | `() => {}` | Função que será executada quando o valor do input for alterado |
+| `backgroundColor` | `string` | `#202024` | Cor de fundo do input |
+| `placeholderColor` | `string` | `#7c7c8a` | Cor do placeholder do input |
+| `fontColor` | `string` | `#000` | Cor da fonte do input |
+
+## _Exemplos_
+
+<Canvas isColumn>
+<Story name="Email" args={{
+  placeholder: "Digite um email",
+  size: "md",
+  type: "email"
+}}>
+  {({
+    placeholder,
+    type,
+    size,
+    ...props
+  }) => {
+    return (
+      <slot>
+        <Input 
+          {...props}
+          placeholder={placeholder} 
+          type={type}
+          size={size} 
+        />
+      </slot>
+    )
+  }}
+</Story>
+<Story name="Password" args={{
+  placeholder: "Digite uma senha",
+  size: "md",
+  type: "password"
+}}>
+  {({
+    placeholder,
+    type,
+    size,
+    ...props
+  }) => {
+    return (
+      <slot>
+        <Input 
+          {...props}
+          placeholder={placeholder} 
+          type={type}
+          size={size} 
+        />
+      </slot>
+    )
+  }}
+</Story>
+<Story name="Text" args={{
+  placeholder: "Digite um texto",
+  size: "md",
+  type: "text"
+}}>
+  {({
+    placeholder,
+    type,
+    size,
+    ...props
+  }) => {
+    return (
+      <slot>
+        <Input 
+          {...props}
+          placeholder={placeholder} 
+          type={type}
+          size={size} 
+        />
+      </slot>
+    )
+  }}
+</Story>
+</Canvas>

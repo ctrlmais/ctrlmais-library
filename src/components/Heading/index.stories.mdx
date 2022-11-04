@@ -1,0 +1,72 @@
+<!-- Heading.stories.mdx -->
+import {useState} from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Heading } from './index';
+
+# Heading
+> O _**`<Heading>`**_ é um componente que pode ser usado para exibir cabeçalhos.
+
+## _Props_
+
+> Propriedades comuns do componente.
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :------ | :---------- |
+| `children` | `ReactNode<string>` | `undefined` | Conteúdo do heading |
+| `size` | `string` | `md` | Tamanho do heading |
+
+<Meta title="Docs/Heading" component={ Heading } />
+
+export const Template = (args) => <Heading {...args} />;
+
+## _Exemplos_
+
+<Canvas isColumn  withSource="closed" withToolbar>
+  <Story name="Large" args={{
+    children: 'Large',
+    size: 'lg'
+  }}>
+  {({
+    children,
+    size,
+    ...props
+  }) => {
+    return (
+      <Heading {...props} size={size}>
+        {children}
+      </Heading>
+    )
+  }}
+  </Story>
+  <Story name="Medium" args={{
+    children: 'Medium',
+    size: 'md'
+  }}>
+  {({
+    children,
+    size,
+    ...props
+  }) => {
+    return (
+      <Heading {...props} size={size}>
+        {children}
+      </Heading>
+    )
+  }}
+  </Story>
+  <Story name="Small" args={{
+    children: 'Small',
+    size: 'sm'
+  }}>
+  {({
+    children,
+    size
+  }) => {
+    return (
+      <Heading size={size}>
+        {children}
+      </Heading>
+    )
+  }}
+  </Story>
+</Canvas>

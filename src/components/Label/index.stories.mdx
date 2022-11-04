@@ -1,0 +1,70 @@
+<!-- Label.stories.mdx -->
+import {useState} from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Label } from './index';
+
+# Label
+> O _**`<Label>`**_ é um componente que pode ser usado para exibir textos categóricos.
+
+## _Props_
+
+> Propriedades comuns do componente.
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :------ | :---------- |
+| `children` | `ReactNode<string>` | `undefined` | Conteúdo da label |
+| `size` | `string` | `md` | Tamanho da label |
+
+<Meta title="Docs/Label" component={ Label } />
+
+export const Template = (args) => <Label {...args} />;
+
+## _Exemplos_
+
+<Canvas isColumn  withSource="closed" withToolbar>
+  <Story name="Large" args={{
+    children: 'Large',
+    size: 'lg'
+  }}>
+  {({
+    children,
+    size
+  }) => {
+    return (
+      <Label size={size}>
+        {children}
+      </Label>
+    )
+  }}
+  </Story>
+  <Story name="Medium" args={{
+    children: 'Medium',
+    size: 'md'
+  }}>
+  {({
+    children,
+    size
+  }) => {
+    return (
+      <Label size={size}>
+        {children}
+      </Label>
+    )
+  }}
+  </Story>
+  <Story name="Small" args={{
+    children: 'Small',
+    size: 'sm'
+  }}>
+  {({
+    children,
+    size
+  }) => {
+    return (
+      <Label size={size}>
+        {children}
+      </Label>
+    )
+  }}
+  </Story>
+</Canvas>

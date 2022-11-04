@@ -1,0 +1,65 @@
+<!-- Checkbox.stories.mdx -->
+import {useState} from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Checkbox } from './index';
+
+# Checkbox
+> O _**`<Checkbox>`**_ é um componente que pode ser usado para ações de controle de estado.
+
+## _Props_
+
+> Propriedades comuns do componente.
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :------ | :---------- |
+| `children` | `ReactNode<string>` | `undefined` | Conteúdo do checkbox |
+| `checked` | `boolean` | `false` | Define se o checkbox está selecionado ou não |
+| `onCheckedChange` | `function` | `() => {}` | Função que será executada quando o checkbox for clicado |
+| `backgroundColor` | `string` | `#1a1a1a` | Define a cor de fundo do checkbox |
+| `labelColor` | `string` | `#C4C4CC` | Define a cor do texto do checkbox |
+| `indicatorColor` | `string` | `#81D8F7` | Define a cor do indicador do checkbox |
+
+<Meta title="Docs/Checkbox" component={ Checkbox } />
+
+export const Template = (args) => <Checkbox {...args} />;
+
+## _Exemplos_
+
+<Canvas isColumn  withSource="closed" withToolbar>
+  <Story name="Checked" args={{
+    children: 'Checked',
+    checked: true
+  }}>
+  {({children, checked, ...props}) => {
+    const [_checked, setChecked] = useState(checked);
+    
+    return (
+      <Checkbox 
+        {...props}
+        checked={_checked} 
+        onCheckedChange={setChecked}
+      >
+        {children}
+      </Checkbox>
+    )
+  }}
+  </Story>
+  <Story name="Unchecked" args={{
+    children: 'Unchecked',
+    checked: false
+  }}>
+  {({children, checked, ...props}) => {
+    const [_checked, setChecked] = useState(checked);
+    
+    return (
+      <Checkbox 
+        {...props}
+        checked={_checked} 
+        onCheckedChange={setChecked}
+      >
+        {children}
+      </Checkbox>
+    )
+  }}
+  </Story>
+</Canvas>

@@ -1,0 +1,50 @@
+<!-- Button.stories.mdx -->
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Button } from './index';
+
+# Button
+> O **_`<Button>`_** é um componente de botão que pode ser usado para ações de clique.
+
+## _Props_
+
+> Propriedades comuns do componente.
+
+| Prop | Type | Default | Description |
+| :--- | :--- | :------ | :---------- |
+| `size` | `string` | `'md'` | Define o tamanho do botão, pode ser `sm`, `md` e `lg` |
+| `children` | `string` | `undefined` | Define o texto do botão |
+| `onClick` | `function` | `undefined` | Define a função que será executada ao clicar no botão |
+| `textColor` | `string` | `undefined` | Define a cor do texto do botão |
+| `backgroundColor` | `string` | `undefined` | Define a cor de fundo do botão |
+| `hoverColor` | `string` | `undefined` | Define a cor de fundo do botão ao passar o mouse por cima |
+| `fontSize` | `string` | `undefined` | Define o tamanho da fonte do botão |
+| `fontWeight` | `string` | `undefined` | Define o peso da fonte do botão |
+
+## _Observação_
+
+> A Propriedade `full` irá esticar o máximo que puder dentro do container, porém limitada até `400px`
+
+<Meta title="Docs/Button" component={ Button } />
+
+export const Template = (args) => <Button {...args} >{args.children}</Button>;
+
+## Examples
+<Canvas isColumn  withSource="open" withToolbar>
+<Story name="Small" args={{ 
+  children: 'Small' 
+}}> 
+ {Template.bind({})}
+</Story>
+<Story name="Normal" args={{
+  children: 'Normal',
+  size: 'md'
+}}>
+{Template.bind({})}
+</Story>
+<Story name="Large" args={{
+  children: 'Large',
+  size: 'lg'
+}}>
+{Template.bind({})}
+</Story>
+</Canvas>

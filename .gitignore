@@ -1,0 +1,7 @@
+node_modules
+dist
+.idea
+*lock*
+storybook-static
+*error.log*
+.parcel-cache

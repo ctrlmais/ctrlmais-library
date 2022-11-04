@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #81D8F7;
+  --secondary: #7C7C8A;
+
+  /* theme */
+  --dark-theme: #1a1a1a;
+  --light-theme: #fff;
+
+  /* font */
+  --light-text: #FFFFFF;
+  --dark-text: #000000;
+
+  /* font-size */
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-lg: 18px;
+
+  /* heading-size */
+  --heading-lg: 2.5rem;
+  --heading-md: 1.5rem;
+  --heading-sm: 1.25rem;
+}
