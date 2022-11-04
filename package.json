@@ -1,7 +1,9 @@
 {
   "name": "@ctrlmais/library",
   "version": "1.0.0",
-  "repository": "https://github.com/ctrlmais/ctrlmais-library",
+  "repository": {
+    "url": "git+https://github.com/ctrlmais/ctrlmais-library.git"
+  },
   "license": "MIT",
   "private": false,
   "description": "Biblioteca de componentes",
