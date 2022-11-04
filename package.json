@@ -1,8 +1,8 @@
 {
-  "name": "@ctrlmais/library",
+  "name": "@ctrlmais/system-ui",
   "version": "1.0.0",
   "repository": {
-    "url": "git+https://github.com/ctrlmais/ctrlmais-library.git"
+    "url": "git+https://github.com/ctrlmais/ctrlmais-system-ui.git"
   },
   "license": "MIT",
   "private": false,
